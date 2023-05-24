@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 namespace LogOT.Domain.Enums;
 public enum LeaveLogStatus
 {
-    pending = 0,
-    solved = 1,
-    notSolved = 2
+    Pending = 0,
+    Approved = 1,
+    Cancelled = 2
+}
+public enum OvertimeLogStatus
+{
+    Pending = 0,
+    Approved = 1,
+    Cancelled = 2
 }

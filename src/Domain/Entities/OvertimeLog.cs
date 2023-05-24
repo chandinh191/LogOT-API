@@ -22,7 +22,7 @@ public class OvertimeLog : BaseAuditableEntity
     }
 
     // Trạng thái kiểm duyệt
-    public bool Status { get; set; }
+    public OvertimeLogStatus Status { get; set; }
 
     public bool IsDeleted { get; set; }
 
