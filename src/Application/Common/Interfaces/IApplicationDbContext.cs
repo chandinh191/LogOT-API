@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CleanArchitecture.Domain.Entities;
 using LogOT.Domain.Entities;
 using LogOT.Domain.Entities;
 using LogOT.Domain.IdentityModel;
@@ -9,9 +10,7 @@ namespace LogOT.Application.Common.Interfaces;
 public interface IApplicationDbContext
 {
     DbSet<TodoList> TodoLists { get; }
-
     DbSet<TodoItem> TodoItems { get; }
-    
     DbSet<ApplicationUser> ApplicationUsers { get; }
     DbSet<Allowance> Allowances { get; }
     DbSet<Company> Companies { get; }
@@ -31,10 +30,10 @@ public interface IApplicationDbContext
     DbSet<PaymentHistory> PaymentHistories { get; }
     DbSet<PaySlip> PaySlips { get; }
     DbSet<Position> Positions { get; }
-
     DbSet<Skill> Skills { get; }
     DbSet<Skill_Employee> Skill_Employees { get; }
     DbSet<Skill_JD> Skill_JDs { get; }
+    DbSet<TaxIncome> TaxIncomes { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
