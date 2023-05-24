@@ -73,6 +73,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<Domain.IdentityMod
                 Fullname = "Lewis",
                 Address = "TEST",
                 Image = "TESTIMAGE",
+                BirthDay = DateTime.Parse("9/9/9999"),
                 UserName = "test",
                 NormalizedUserName = "test",
                 Email = "test@gmail.com",
@@ -97,7 +98,6 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<Domain.IdentityMod
                 Id = Guid.Parse("ac69dc8e-f88d-46c2-a861-c9d5ac894141"),
                 ApplicationUserId = "fe30e976-2640-4d35-8334-88e7c3b1eac1",
                 IdentityImage = "IMGTEST",
-                BirthDay = DateTime.Parse("9/9/9999"),
                 Diploma = "TEST",
                 BankAccountNumber = "123456789",
                 BankAccountName = "LUONG THE DAN",
@@ -230,7 +230,6 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<Domain.IdentityMod
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         await _mediator.DispatchDomainEvents(this);
-
         return await base.SaveChangesAsync(cancellationToken);
     }
 }
